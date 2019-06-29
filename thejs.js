@@ -873,7 +873,7 @@ $(document).ready(function() {
       var x="";
       data.html.forEach((ha)=>{x+=('<span style="background: yellow">'+ha+'</span> ')})
       x+="<br>When these keywords appear in emails which belongs to "
-      data.entities.forEach((ha)=>{x+=('<span style="background: indianred">'+ha+'</span> ')})
+      data.entities.forEach((ha)=>{x+=('<span style="background: pink">'+ha+'</span> ')})
       $( "#bodyemail" ).html("Keywords: "+ x +" entities, it is assumed that these emails are highly suspicious! "  +data.verdict );
 
     });
