@@ -869,8 +869,14 @@ $(document).ready(function() {
     addEmail();
   })
   $('.leftcolupper').click(function(e){
-    $('#bodyemail').text("happy!")
-    console.log($('#bodyemail').text())
+    $.get( "https://fishvisor-extract.glitch.me/autorespond?text="+$('#bodyemail').text(), function( data ) {
+      var x="";
+      data.html.forEach((ha)=>{x+=('<span style="background: yellow">'+ha+'</span> ')})
+      x+="<br>When these keywords appear in emails which belongs to "
+      data.entities.forEach((ha)=>{x+=('<span style="background: indianred">'+ha+'</span> ')})
+      $( "#bodyemail" ).html("Keywords: "+ x +" entities, it is assumed that these emails are highly suspicious! "  +data.verdict );
+
+    });
   })
   $(window).resize(onResize);
   $('.newemailbutton').click(addSubReddit);
