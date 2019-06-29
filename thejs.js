@@ -207,7 +207,7 @@ function myWindow(type, state, tofield, ccfield, subjectfield, bodyfield, isLogi
   }
 }
 
-function myStory(parentJson, folder, addToDom) {
+/*function myStory(parentJson, folder, addToDom) {
   var rootJson = parentJson.data;
   this.rootJson = rootJson;
   this.folder = folder;
@@ -241,6 +241,28 @@ function myStory(parentJson, folder, addToDom) {
   this.addToArea = function() {
     $('#previewarea').append(this.previewHTML);
   }
+}*/
+
+
+function addEmail(){
+
+  var previewHTML = '<div id="%id" class="anemail emailunread"><div class="emailicon"></div><div class="emailiconright"></div><div class="emailpreview"><div class="emailname">%randomname (%author)</div><div class="emailtitle">(RE:^%score)  %title <br /><span style="color: #3498DB">%subreddit | %domain</span></div></div></div>';
+
+
+  previewHTML = previewHTML.replace('%author', "No-reply");
+  previewHTML = previewHTML.replace('%randomname',  "No-reply");
+  previewHTML = previewHTML.replace('%score', "Flagged Email");
+  previewHTML = previewHTML.replace('%title', "Thank you for your contribution");
+  previewHTML = previewHTML.replace('%subreddit', "");
+  previewHTML = previewHTML.replace('%domain', "");
+  previewHTML = previewHTML.replace('%id', "shite");
+  this.previewHTML = previewHTML;
+  this.bodyHTML = 'kkk';
+
+
+
+    $('#previewarea').append(this.previewHTML);
+
 }
 
 function getRedditDomain() {
@@ -843,10 +865,17 @@ function addSubReddit() {
 }
 $(document).ready(function() {
   onResize();
+  $('.buttons').click(function(e){
+    addEmail();
+  })
+  $('#shite').click(function(e){
+    $('#bodyemail').text="happy!"
+    console.log($('#bodyemail').text)
+  })
   $(window).resize(onResize);
   $('.newemailbutton').click(addSubReddit);
   main_inbox = makeFolder('Front Page');
-  makeFolder('gaming');
+  /*makeFolder('gaming');
   makeFolder('pics');
   makeFolder('askreddit');
   makeFolder('jokes');
@@ -870,5 +899,5 @@ $(document).ready(function() {
         spawnCommandWindow();
       }
     }
-  });
+  });*/
 });
