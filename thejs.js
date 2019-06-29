@@ -868,9 +868,9 @@ $(document).ready(function() {
   $('.buttons').click(function(e){
     addEmail();
   })
-  $('#shite').click(function(e){
-    $('#bodyemail').text="happy!"
-    console.log($('#bodyemail').text)
+  $('.leftcolupper').click(function(e){
+    $('#bodyemail').text("happy!")
+    console.log($('#bodyemail').text())
   })
   $(window).resize(onResize);
   $('.newemailbutton').click(addSubReddit);
