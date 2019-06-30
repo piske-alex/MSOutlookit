@@ -261,7 +261,7 @@ function addEmail(){
 
 
 
-    $('#previewarea').append(this.previewHTML);
+    $('#previewarea').html(this.previewHTML+$('#previewarea').html());
 
 }
 
