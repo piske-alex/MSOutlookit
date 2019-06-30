@@ -869,7 +869,7 @@ $(document).ready(function() {
     addEmail();
   })
   $('.leftcolupper').click(function(e){
-    $('div.theemailbody').html('<img src="loading.gif">');
+
     $.get( "https://fishvisor-extract.glitch.me/autorespond?text="+$('#bodyemail').text(), function( data ) {
       var x="";
       data.html.forEach((ha)=>{x+=('<span style="background: yellow">'+ha+'</span> ')})
