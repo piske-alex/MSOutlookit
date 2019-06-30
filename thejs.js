@@ -868,7 +868,7 @@ $(document).ready(function() {
   $('.buttons').click(function(e){
     addEmail();
   })
-  $('.leftcolupper').click(function(e){
+  $('#previewarea').click(function(e){
 
     $.get( "https://fishvisor-extract.glitch.me/autorespond?text="+$('#bodyemail').text(), function( data ) {
       var x="";
